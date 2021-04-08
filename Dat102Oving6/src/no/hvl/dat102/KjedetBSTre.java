@@ -76,9 +76,9 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 		if (p == null) {
 			p = new BinaerTreNode<T>(element);
 		} else if (element.compareTo(p.getElement()) > 0) {
-			p.setVenstre(leggTilRek(p.getVenstre(), element));
-		} else {
 			p.setHoyre(leggTilRek(p.getHoyre(), element));
+		} else {
+			p.setVenstre(leggTilRek(p.getVenstre(), element));
 		}
 		return p;
 	}
@@ -104,10 +104,12 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 
 			if (rot.getVenstre() == null) {
 				minVerdi = rot.getElement();
+				rot = rot.getHoyre();
 			} else {
 				BinaerTreNode<T> aktuell;
 				aktuell = rot.getVenstre();
-				BinaerTreNode<T> foreldre = rot;
+				BinaerTreNode<T> foreldre;
+				foreldre = rot;
 
 				while (aktuell.getVenstre() != null) {
 					foreldre = aktuell;
@@ -136,8 +138,9 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterab
 			} else {
 				BinaerTreNode<T> aktuell;
 				aktuell = rot.getHoyre();
-				BinaerTreNode<T> foreldre = rot;
-
+				BinaerTreNode<T> foreldre;
+				foreldre = rot;
+				
 				while (aktuell.getHoyre() != null) {
 					foreldre = aktuell;
 					aktuell = aktuell.getHoyre();

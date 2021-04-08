@@ -49,12 +49,12 @@ public class KjedetBSTreADTTest {
 		bs.leggTil(e6);
 		
 		assertEquals(e0, bs.finn(e0));
-		assertEquals(e0, bs.finn(e1));
-		assertEquals(e0, bs.finn(e2));
-		assertEquals(e0, bs.finn(e3));
-		assertEquals(e0, bs.finn(e4));
-		assertEquals(e0, bs.finn(e5));
-		assertEquals(e0, bs.finn(e6));
+		assertEquals(e1, bs.finn(e1));
+		assertEquals(e2, bs.finn(e2));
+		assertEquals(e3, bs.finn(e3));
+		assertEquals(e4, bs.finn(e4));
+		assertEquals(e5, bs.finn(e5));
+		assertEquals(e6, bs.finn(e6));
 		
 		//sjekker at elementet e7 ikke ligger i treet
 		assertEquals(null, bs.finn(e7));

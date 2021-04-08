@@ -11,7 +11,7 @@ import no.hvl.dat102.adt.BSTreADT;
 public class KlientBSTre2 {
 
 	private static List<BSTreADT<Integer>> liste;
-	private static final int ANTALL_NODER = 1023;
+	private static final int ANTALL_NODER = 8192;
 	private static final int ANTALL_TRE = 100;
 	private static Random tilfeldig;
 	
@@ -53,7 +53,7 @@ public class KlientBSTre2 {
 		System.out.println("---------- MÅLING AV TILFELIDGE BINÆRE SØKETRE ----------");
 		System.out.println("");
 		System.out.println("Antall noder: " + n);
-		System.out.println("Minimal teoretisk høyde: " + Math.round((Math.log(n + 1) / Math.log(2)) + 1));
+		System.out.println("Minimal teoretisk høyde: " + Math.round((Math.log(n + 1) / Math.log(2) - 1)));
 		System.out.println("Maksimal teoretisk høyde: " + (n-1));
 		System.out.println("Minste høyde ila. kjøring: " + minst);
 		System.out.println("Største høyde ila. kjøring: " + stoerst);
